@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="class.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- 
+<head>
+    <script src="class.js"></script>
+</head> 안에 선언된 경우
+1. browser 에서 html 을 parsing
+2. script 에 선언된 class.js 를 fetching, parsing 대기
+3. fetching 된 class.js 를 executing, parsing 대기
+4. parsing 끝 
+->
+
+<body>
+    <script src="class.js"></script>
+</body> 안에 선언된 경우
+1. parsing 끝 
+2. script 에 선언된 class.js 를 fetching
+3. fetching 된 class.js 를 executing
+
+- 장점 : 사용자가 html 을 빨리 볼수 있다.
+- 단점 : 사이트가 Javascript에 의존적이라면 정삭적인 페이지를 보기 전까지는 원치않은 화면을 볼수 있다.
+
+
+<!-- 
+<head>
+    <script async src="class.js"></script>
+</head> 안에  async를 이용해 선언된 경우
+1. browser 에서 html 을 parsing
+2. script 에 선언된 class.js 를 병렬로 fetching
+3. fetching 된 class.js 를 executing, parsing 대기
+4. parsing 끝 
+->
+
+- 단점 : html parsing 전에 실행되기 때문에 dom 을 제어하다 그 시점에 정의되어 있지 않을수 있기 때문에 오류가 날 수 있음.
+- 여러개의 async 가 선언되어 있을 경우 fetching 은 병렬이나 fetching 이 끝난 후 바로 개별적으로 excuting 되므로 script 파일별 실행 순서가 중요한 경우 의도치 않은 오류가 날 수 있음
+
+<!-- 
+<head>
+    <script defer src="class.js"></script>
+</head> 안에  defer 를 이용해 선언된 경우
+1. browser 에서 html 을 parsing
+2. script 에 선언된 class.js 를 병렬로 fetching
+3. parsing 끝 
+4. fetching 된 class.js 를 executing
+->
+
+
+장점 : 여러개의 defer를 선언 할 경우 fetching 은 병렬이나 fetching 이 끝난 후, 선언 된 순서대로 excuting 되므로 script 파일별 실행 순서가 중요한 경우 문제없이 실행
+
+
+
+'user strict'; // ECMAScript 5
+바닐라 JavaScript
+
+javascript 는 유연함
+1. 'use struct' 를 사용하게 되면 비 상식적인 코딩을 막아줌(선언되지 않은 변수 사용 등)
+2. JavaScript 엔진이 조금더 효율적, 빠르게 분석할 수 있기 때문에 성능 향상에 기여할 수 있음
+3. script 파일 생성 시 맨 윗줄에 선언하는 것을 추천
+
