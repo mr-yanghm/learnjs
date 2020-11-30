@@ -1,0 +1,50 @@
+.container {
+  background: beige;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: column nowrap; */
+
+  justify-content: space-evenly; /* main axis */
+  align-items: baseline; /* cross axis */
+  align-content: space-between;
+}
+
+.item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.item1 {
+  background: #ef9a9a;
+  padding: 20px;
+}
+.item2 {
+  background: #ce5353;
+}
+.item3 {
+  background: #f357f8;
+}
+.item4 {
+  background: #aa6dce;
+}
+.item5 {
+  background: #8ad6fa;
+}
+.item6 {
+  background: #74f5aa;
+}
+.item7 {
+  background: #beff68;
+}
+.item8 {
+  background: #f9fc64;
+}
+.item9 {
+  background: #f57d1bbd;
+}
+.item10 {
+  background: #ff0a0a;
+}

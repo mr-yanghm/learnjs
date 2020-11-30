@@ -1,0 +1,45 @@
+.container {
+  padding-top: 100px;
+  background: beige;
+  height: 100vh;
+  display: flex;
+}
+
+.item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.item1 {
+  background: #ef9a9a;
+  flex: 2 2 auto;
+  align-self: center;
+  /* 
+  order: 2;
+  flex-grow: 1; 영역에 차있는 비율
+  flex-shrink: 2; container가 작아졌을 때 줄어드는 비율
+
+  flex-basis: 60%;
+   */
+}
+.item2 {
+  background: #ce5353;
+  /* 
+  order: 1;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+
+  flex-basis: 60%;
+   */
+}
+.item3 {
+  background: #f357f8;
+  /*   
+  order: 3;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+
+  flex-basis: 60%;
+   */
+}
